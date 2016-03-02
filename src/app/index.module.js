@@ -24,7 +24,7 @@ import StripHtmlFilter from './filters/striphtml.filter';
 import OmitFiltersFilter from './filters/omitfilters.filter';
 import DisplayDateFilter from './filters/displayDate.filter';
 
-angular.module('CareerPortal', ['ngAnimate', 'ngTouch', 'ngSanitize', 'ui.router', 'ngFileUpload', '720kb.tooltips', 'ng-fastclick', 'ngLocalize', 'ngLocalize.Config', 'ngLocalize.InstalledLanguages', 'ngLocalize.Events'])
+angular.module('CareerPortal', ['angulartics', 'angulartics.google.analytics', 'ngAnimate', 'ngTouch', 'ngSanitize', 'ui.router', 'ngFileUpload', '720kb.tooltips', 'ng-fastclick', 'ngLocalize', 'ngLocalize.Config', 'ngLocalize.InstalledLanguages', 'ngLocalize.Events'])
     .constant('moment', moment)
     .constant('localeConf', {})
     .constant('localeSupported', [])
