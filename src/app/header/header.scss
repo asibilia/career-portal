@@ -3,7 +3,7 @@ header.app {
     min-height: $header-height;
     padding: 0 1.5em;
     text-align: center;
-    //background-color: $header-bg;
+    background-color: rgba(#000,.1);
     color: $white;
     z-index: $header-z-index;
     @include desktop() {

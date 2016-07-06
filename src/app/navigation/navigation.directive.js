@@ -1,15 +1,32 @@
 class BullhornHeaderController {
-    constructor(configuration, $location, SearchService) {
+    constructor($location, $window, $scope, $element, $attrs) {
         'ngInject';
 
-        this.SearchService = SearchService;
+        this.$window = $window;
         this.$location = $location;
-        this.configuration = configuration;
+        $scope.txtOpacity = 1;
+        this.scroll($scope, $element, $attrs);
     }
 
-    toggleFilters() {}
+    scroll(scope, element, attrs) {
+        Number.prototype.map = function (in_min, in_max, out_min, out_max) {
+            return (this - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+        }
 
-    goBack() {}
+
+        angular.element(this.$window).bind('scroll', () => {
+            scope.txtOpacity = 1 - this.$window.scrollY.map(0, 210, 0, 1);
+            console.log(scope.txtOpacity);
+            if (this.$window.scrollY > 400) {
+                scope.collapse = true;
+                console.log(this.$window.scrollY);
+            } else {
+                scope.collapse = false;
+                console.log(this.$window.scrollY);
+            }
+            scope.$apply();
+        });
+    }
 }
 
 class BullhornHeader {
@@ -21,7 +38,7 @@ class BullhornHeader {
             templateUrl: 'app/navigation/navigation.html',
             scope: false,
             controller: BullhornHeaderController,
-            controllerAs: 'header',
+            controllerAs: 'navigation',
             bindToController: true,
             replace: true
         };

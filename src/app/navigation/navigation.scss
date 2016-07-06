@@ -1,8 +1,23 @@
 .bh-header-nav {
     background: #5198DE;
     color: #fff;
+    transition: height 200ms ease-in-out;
+    overflow: hidden;
+    padding-top: 82px;
+
+    &.collapse {
+        //height: 82px;
+        & + .portal {
+            & > .portal-canvas > section.main > section.fade {
+                overflow: hidden;
+            }
+        }
+    }
 
     nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
