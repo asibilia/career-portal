@@ -8,8 +8,11 @@
     &.collapse {
         //height: 82px;
         & + .portal {
-            & > .portal-canvas > section.main > section.fade {
-                overflow: hidden;
+            & > .portal-canvas {
+                & > aside.side-bar > section,
+                & > section.main > section.fade {
+                    overflow: hidden;
+                }
             }
         }
     }
@@ -23,6 +26,12 @@
         justify-content: space-between;
         padding: 20px 25px;
         background: rgba(0, 0, 0, 0.1);
+        z-index: 4;
+        transition: all 100ms ease-in-out;
+
+        &.collapse {
+            background: #4989C8;
+        }
 
         img {
             max-height: 42px;

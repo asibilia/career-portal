@@ -13,16 +13,15 @@ class BullhornHeaderController {
             return (this - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
         }
 
-
         angular.element(this.$window).bind('scroll', () => {
             scope.txtOpacity = 1 - this.$window.scrollY.map(0, 210, 0, 1);
-            console.log(scope.txtOpacity);
+
             if (this.$window.scrollY > 400) {
                 scope.collapse = true;
-                console.log(this.$window.scrollY);
+                // console.log(this.$window.scrollY);
             } else {
                 scope.collapse = false;
-                console.log(this.$window.scrollY);
+                // console.log(this.$window.scrollY);
             }
             scope.$apply();
         });
