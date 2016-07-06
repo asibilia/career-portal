@@ -2,7 +2,6 @@
    sass dependencies when defined in the bower.json of your dependencies */
 // bower:scss
 // endbower
-
 $white: #FFFFFF;
 $primary: #5198DE;
 $secondary: #ACC72E;
@@ -13,24 +12,21 @@ $sidebar-header-bg: #252728;
 $toggle-active: #fff;
 $cancel: darken($light-bg, 15%);
 $error: #da4453;
-
 $font-size: 13px;
 $font-family: 'Roboto';
 $base-color: #46474A;
-
 $header-height: 60px;
 $sidebar-width: 300px;
 $sidebar-width-small: 50px;
-
 $modal-z-index: 1000;
 $header-z-index: 100;
-
 /* Do not remove this comments bellow. It's the markers used by gulp-inject to inject
    all your sass files automatically */
 // injector
 // endinjector
 
-html, body {
+body,
+html {
     -webkit-font-smoothing: antialiased;
     font-family: $font-family;
     font-size: $font-size;
@@ -39,7 +35,7 @@ html, body {
     width: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    //overflow: hidden;
     background-color: $light-bg;
     box-sizing: border-box;
 
@@ -49,7 +45,9 @@ html, body {
     }
 }
 
-*, *:before, *:after {
+*,
+*:after,
+*:before {
     box-sizing: inherit;
 }
 
@@ -67,7 +65,8 @@ html, body {
 }
 
 input {
-    &:focus, &:active {
+    &:active,
+    &:focus {
         outline: none;
     }
 }
@@ -75,7 +74,8 @@ input {
 button {
     cursor: pointer;
 
-    &:focus, &:active {
+    &:active,
+    &:focus {
         outline: none;
     }
 }
@@ -84,7 +84,9 @@ a {
     color: $primary;
     text-decoration: none;
 
-    &:visited, &:focus, &:active {
+    &:active,
+    &:focus,
+    &:visited {
         color: $primary;
     }
 }
@@ -110,11 +112,12 @@ a {
             margin-top: 1em;
             white-space: nowrap;
             display: block;
-
             color: $primary;
             text-decoration: none;
 
-            &:visited, &:focus, &:active {
+            &:active,
+            &:focus,
+            &:visited {
                 color: $primary;
             }
         }
@@ -128,7 +131,9 @@ a {
         }
     }
 
-    > .card-location, > .card-type, > .card-separator {
+     > .card-location,
+     > .card-type,
+    > .card-separator {
         color: lighten($dark-bg, 40%);
         font-weight: 500;
         font-size: 1.1em;
@@ -163,7 +168,7 @@ div.no-data-message {
     visibility: hidden;
     display: block;
     font-size: 0;
-    content: " ";
+    content: ' ';
     clear: both;
     height: 0;
 }

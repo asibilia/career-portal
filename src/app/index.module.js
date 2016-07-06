@@ -10,6 +10,7 @@ import CareerPortalSidebarController from './sidebar/sidebar.controller';
 import Main from './main/main.directive';
 import CareerPortalSidebar from './sidebar/sidebar.directive';
 import CareerPortalHeader from './header/header.directive';
+import BullhornHeader from './navigation/navigation.directive';
 import CareerPortalModal from './modal/modal.directive';
 
 import SearchService from './services/search.service';
@@ -35,6 +36,7 @@ angular.module('CareerPortal', ['ngAnimate', 'ngTouch', 'ngSanitize', 'ui.router
     .directive('main', () => new Main())
     .directive('careerPortalSidebar', () => new CareerPortalSidebar())
     .directive('careerPortalHeader', () => new CareerPortalHeader())
+    .directive('bullhornHeader', () => new BullhornHeader())
     .directive('careerPortalModal', () => new CareerPortalModal())
     .controller('JobListController', JobListController)
     .controller('JobDetailController', JobDetailController)
