@@ -8,6 +8,7 @@ header.app {
     z-index: $header-z-index;
     @include desktop() {
         text-align: left;
+        display: none;
     }
 
     > label {
