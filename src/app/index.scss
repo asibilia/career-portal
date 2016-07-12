@@ -6,9 +6,10 @@ $white: #FFFFFF;
 $primary: #5198DE;
 $secondary: #ACC72E;
 $light-bg: #F4F4F4;
-$dark-bg: #2E2F30;
+$dark-bg: #eaeaea;
 $header-bg: $primary;
-$sidebar-header-bg: #252728;
+$sidebar-header-bg: #d9dbdc;
+$sidebar-color: #676767;
 $toggle-active: #fff;
 $cancel: darken($light-bg, 15%);
 $error: #da4453;
@@ -99,7 +100,7 @@ a {
     > .card-date {
         font-size: 0.8em;
         font-weight: 500;
-        color: lighten($dark-bg, 50%);
+        color: lighten($sidebar-color, 50%);
     }
 
     > .card-title-category {
@@ -126,7 +127,7 @@ a {
             display: block;
             margin-bottom: 1em;
             font-size: 1.2em;
-            color: $dark-bg;
+            color: $sidebar-color;
             font-weight: 600;
         }
     }
@@ -134,7 +135,7 @@ a {
      > .card-location,
      > .card-type,
     > .card-separator {
-        color: lighten($dark-bg, 40%);
+        color: lighten($sidebar-color, 40%);
         font-weight: 500;
         font-size: 1.1em;
     }
