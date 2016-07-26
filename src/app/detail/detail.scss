@@ -17,6 +17,7 @@ section.job-detail {
             flex: 1;
             background-color: $white;
             box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+            max-width: 63em;
         }
 
         > div.job-heading {
@@ -218,9 +219,9 @@ section.job-detail {
             }
         }
 
-         > .card-location,
+         > .card-separator,
          > .card-type,
-        > .card-separator {
+        > .card-location {
             color: $sidebar-color;
             font-weight: 500;
             font-size: 1.1em;

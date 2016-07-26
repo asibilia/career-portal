@@ -15,11 +15,11 @@ class BullhornHeaderController {
 
         angular.element(this.$window).bind('scroll', () => {
             scope.txtOpacity = 1 - this.$window.scrollY.map(0, 210, 0, 1);
+            let headerHeight = this.$window.document.getElementById('header-text').offsetHeight;
 
-            if (this.$window.scrollY > 409) {
-                console.log(this.$window.document.body.scrollTop);
+            if (this.$window.scrollY > headerHeight) {
                 scope.collapse = true;
-                this.$window.document.body.scrollTop = 410;
+                this.$window.document.body.scrollTop = headerHeight + 1;
                 // console.log(this.$window.scrollY);
             } else {
                 scope.collapse = false;

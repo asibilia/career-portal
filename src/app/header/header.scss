@@ -6,6 +6,7 @@ header.app {
     background-color: rgba(#000,.1);
     color: $white;
     z-index: $header-z-index;
+    position: relative;
     @include desktop() {
         text-align: left;
         display: none;
@@ -33,6 +34,8 @@ header.app {
         position: absolute;
         left: 1em;
         top: 0;
+        width: calc(100% - 1.5em);
+        height: 100%;
     }
 
     > button.toggle-filters {
@@ -65,8 +68,8 @@ header.app {
                 display: block;
             }
 
-             > .open,
-            > .badge {
+             > .badge,
+            > .open {
                 display: none;
             }
         }
