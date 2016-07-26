@@ -3,13 +3,13 @@ header.app {
     min-height: $header-height;
     padding: 0 1.5em;
     text-align: center;
-
-    background-color: $header-bg;
+    background-color: rgba(#000,.1);
     color: $white;
     z-index: $header-z-index;
-
+    position: relative;
     @include desktop() {
         text-align: left;
+        display: none;
     }
 
     > label {
@@ -34,6 +34,8 @@ header.app {
         position: absolute;
         left: 1em;
         top: 0;
+        width: calc(100% - 1.5em);
+        height: 100%;
     }
 
     > button.toggle-filters {
@@ -55,12 +57,10 @@ header.app {
         > .close {
             display: none;
         }
-
         @include desktop() {
             display: none;
         }
     }
-
     // Parent selector
     .show-nav & {
         > button.toggle-filters {
@@ -68,12 +68,12 @@ header.app {
                 display: block;
             }
 
-            > .open, > .badge {
+             > .badge,
+            > .open {
                 display: none;
             }
         }
     }
-
     // Parent selector
     .overview-open & {
         > button.toggle-filters {
@@ -82,7 +82,6 @@ header.app {
 
         > button.go-back {
             display: inline-block;
-
             @include desktop() {
                 display: none;
             }

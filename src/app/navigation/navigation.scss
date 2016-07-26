@@ -1,0 +1,93 @@
+.bh-header-nav {
+    background: url('/assets/images/header_bg.jpg') center/cover no-repeat;
+    color: #fff;
+    transition: height 200ms ease-in-out;
+    overflow: hidden;
+    padding-top: 82px;
+
+    &.collapse {
+        //height: 82px;
+        & + .portal {
+            & > .portal-canvas {
+                & > aside.side-bar > section,
+                & > section.main > section.fade {
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 25px;
+        background: #fff;
+        z-index: 101;
+        transition: all 100ms ease-in-out;
+        color: #434343;
+        box-shadow: 0 1px 3px rgba(#000, .14);
+
+        &.collapse {
+            background: #FFF;
+        }
+
+        img {
+            max-height: 42px;
+        }
+
+        .action-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            a {
+                font-weight: 800;
+                margin: 0 10px;
+                color: #434343;
+            }
+
+            .nav-link-list {
+                display: flex;
+                align-items: center;
+
+                a {
+                    text-transform: uppercase;
+                }
+            }
+
+            a.request-button {
+                background: #FF6900;
+                padding: 10px;
+                border-radius: 3px;
+                color: #fff;
+            }
+        }
+    }
+
+    .header-text {
+        display: block;
+        text-align: center;
+        padding: 80px 2% 140px;
+        background: rgba(#000, 0.5);
+
+        & > * {
+            margin: 0.3em auto;
+        }
+
+        h1 {
+            font-size: 5em;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        h4 {
+            font-size: 2em;
+            line-height: 1.3em;
+            max-width: 38em;
+        }
+    }
+}

@@ -2,7 +2,7 @@ section.job-list {
     padding: 1.5em;
 
     > h4 {
-        color: darken($light-bg, 15%);
+        color: darken($sidebar-color, 15%);
         font-size: 1.3em;
         font-weight: 500;
         margin: 0 0 1em;
@@ -14,7 +14,6 @@ section.job-list {
         font-size: 1.2em;
         cursor: pointer;
     }
-
     // Parent selector
     .list-view & {
         div.cards {
@@ -28,7 +27,6 @@ section.job-list {
                     overflow: hidden;
                     cursor: pointer;
                     display: block;
-
                     @include desktop() {
                         display: flex;
                         flex-flow: row wrap;
@@ -38,7 +36,6 @@ section.job-list {
                     > i {
                         order: 5;
                         display: none;
-
                         @include desktop() {
                             display: inline-block;
                         }
@@ -46,11 +43,10 @@ section.job-list {
 
                     > .card-date {
                         display: none;
-
                         @include desktop() {
                             display: block;
                             flex: 1;
-                            color: lighten($dark-bg, 40%);
+                            color: $sidebar-color;
                             font-weight: 500;
                             font-size: 1.1em;
                             order: 4;
@@ -62,7 +58,6 @@ section.job-list {
                         display: block;
                         width: 100%;
                         margin-bottom: 0.25em;
-
                         @include desktop() {
                             width: 40%;
                             margin-bottom: 0;
@@ -78,7 +73,8 @@ section.job-list {
                         }
                     }
 
-                    > .card-location, > .card-type {
+                     > .card-location,
+                    > .card-type {
                         flex: 1;
                         text-align: center;
                     }
@@ -93,13 +89,12 @@ section.job-list {
                         order: 6;
                         width: 100%;
                         margin-top: 1em;
-                        color: lighten($dark-bg, 20%);
+                        color: $sidebar-color;
                         font-weight: 500;
                         text-overflow: ellipsis;
                         overflow: hidden;
                         white-space: nowrap;
                         display: none;
-
                         @include desktop() {
                             display: inline-block;
                         }
@@ -108,28 +103,23 @@ section.job-list {
             }
         }
     }
-
     // Parent selector
     .grid-view & {
         div.cards {
             display: flex;
             flex-flow: row wrap;
             justify-content: flex-start;
-
             margin-left: -0.75em;
             margin-right: -0.75em;
 
             div.card-wrapper {
                 width: 100%;
                 padding-bottom: 1.5em;
-
                 @include tablet() {
                     width: 50%;
-
                     padding-right: 0.75em;
                     padding-left: 0.75em;
                 }
-
                 @include large-desktop() {
                     width: 33%;
                 }
@@ -149,19 +139,18 @@ section.job-list {
 
                     > .card-description {
                         margin-top: 1em;
-                        color: lighten($dark-bg, 20%);
+                        color: lighten($sidebar-color, 20%);
                         line-height: 1.5em;
                         font-weight: 500;
                         display: block;
                         word-break: break-all;
-
                         text-overflow: ellipsis;
                         height: 16em;
                         overflow: hidden;
                         position: relative;
 
                         &:after {
-                            content: "";
+                            content: '';
                             text-align: right;
                             position: absolute;
                             bottom: 0;
