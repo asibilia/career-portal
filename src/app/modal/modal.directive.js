@@ -1,5 +1,3 @@
-
-
 class CareerPortalModal {
     constructor() {
         'ngInject';

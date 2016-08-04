@@ -1,5 +1,6 @@
 .modal-container {
-    position: absolute;
+    position: fixed;
+    overflow-y: scroll;
     width: 100%;
     height: 100%;
     top: 0;
@@ -15,13 +16,12 @@
         height: 100%;
         width: 100%;
         background: $white;
-        box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.35);
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
         overflow: hidden;
         position: relative;
-
         @include tablet() {
             max-width: 500px;
-            margin: 80px auto;
+            margin: 1% auto;
             height: auto;
 
             &.success {
@@ -31,7 +31,7 @@
 
         &.success {
             height: auto;
-            margin: 80px auto;
+            margin: 1% auto;
             max-width: 300px;
         }
 
@@ -43,7 +43,6 @@
             height: auto;
             position: relative;
             text-align: left;
-
             @include tablet() {
                 padding: 1em 3em 2em 2em;
             }
@@ -73,8 +72,10 @@
                         margin-bottom: 1.2em;
                     }
 
-                    &.location, &.separator, &.type {
-                        color: #3D5668
+                    &.location,
+                    &.separator,
+                    &.type {
+                        color: #3D5668;
                     }
                 }
 
@@ -85,7 +86,6 @@
                     cursor: pointer;
                     color: lighten($primary, 15%);
                     font-size: 2em;
-
                     @include tablet() {
                         display: none;
                     }
@@ -101,9 +101,8 @@
             padding: 1em;
             overflow: auto;
             height: calc(100% - 60px - 120px);
-
             @include tablet() {
-                padding: 2em 2em;
+                padding: 2em;
                 height: auto;
             }
 
@@ -111,7 +110,6 @@
                 form.apply-form {
                     > div.form-field {
                         margin: 1em 0;
-
                         @include desktop() {
                             margin: 2em 0;
                         }
@@ -136,7 +134,8 @@
                                     }
                                 }
 
-                                &[type="text"], &[type="email"] {
+                                &[type="email"],
+                                &[type="text"] {
                                     border: none;
                                     border-bottom: 1px solid darken($light-bg, 15%);
                                     transition: border-bottom 0.2s ease-in-out;
@@ -218,7 +217,8 @@
                         }
                     }
 
-                    &[type="text"], &[type="email"] {
+                    &[type="email"],
+                    &[type="text"] {
                         border: none;
                         border-bottom: 1px solid darken($light-bg, 15%);
                         transition: border-bottom 0.2s ease-in-out;
@@ -229,37 +229,34 @@
                         }
                     }
                 }
-
                 // Linked In Integration:
                 $linked-in-blue: #0077B5;
-
 
                 div.alert {
                     $info-blue-font: #245C7E;
                     $info-blue-bg: #D0E8F6;
-
                     color: $info-blue-font;
                     padding: 1em;
                     margin: 1.5em 0 0;
-                    border-radius: .5em;
+                    border-radius: 0.5em;
 
                     &.info {
                         border: solid thin darken($info-blue-bg, 10%);
                         background-color: $info-blue-bg;
                     }
                 }
+
                 textarea {
                     width: 100%;
                     resize: none;
                     border: none;
                     border-bottom: solid thin #CCC;
-                    padding: 0 .75em;
-
+                    padding: 0 0.75em;
                     color: #797c7e;
 
+                    &:active,
                     &:focus,
-                    &:hover,
-                    &:active {
+                    &:hover {
                         outline: none;
                     }
 
@@ -274,6 +271,7 @@
                     display: block;
                     //height: 2em;
                     margin: 2em 0;
+
                     > span {
                         position: absolute;
                         top: -.5em;
@@ -288,29 +286,23 @@
 
                 button.btn-li-lg {
                     display: block;
-
                     border: none;
-                    border-radius: .25em;
+                    border-radius: 0.25em;
                     padding: 0;
-
                     margin: auto;
-
                     overflow: hidden;
-
                     background: $linked-in-blue;
                     color: white;
-
                     text-align: left;
-
                     -webkit-transition: background-color 250ms;
                     -moz-transition: background-color 250ms;
                     -ms-transition: background-color 250ms;
                     -o-transition: background-color 250ms;
                     transition: background-color 250ms;
 
-                    &:hover,
                     &:active,
-                    &:focus {
+                    &:focus,
+                    &:hover {
                         background-color: darken($linked-in-blue, 5%);
                     }
 
@@ -318,6 +310,7 @@
                     &.loading {
                         background-color: transparentize($linked-in-blue, .25);
                         color: rgba(255, 255, 255, .75);
+
                         > i {
                             border-right-color: lighten($linked-in-blue, 10%);
                         }
@@ -325,8 +318,8 @@
 
                     > i {
                         font-size: 2.5em;
-                        padding: .15em .25em;
-                        margin: 0 .25em 0 0;
+                        padding: 0.15em 0.25em;
+                        margin: 0 0.25em 0 0;
                         display: inline-block;
                         height: 100%;
                         border-right: solid thin darken($linked-in-blue, 7%);
@@ -339,11 +332,8 @@
                         font-weight: 600;
                         padding: 0 1.5em 0 0;
                     }
-
                 }
             }
-
-
         }
 
         footer {
@@ -353,10 +343,8 @@
             bottom: 0;
             left: 0;
             height: 50px;
-
             display: flex;
             flex-flow: row nowrap;
-
             @include tablet() {
                 position: relative;
             }
@@ -383,12 +371,12 @@
                 font-weight: 700;
                 flex: 1;
 
-                &[name="cancel"], &[name="ok"] {
+                &[name="cancel"],
+                &[name="ok"] {
                     color: $cancel;
                     background: transparent;
                     font-weight: 600;
                     display: none;
-
                     @include tablet() {
                         display: inline-block;
                     }
@@ -458,25 +446,25 @@
         animation: loading 1.5s ease-in-out infinite;
     }
 
-    .loading-dot:nth-child(4n + 1) {
-    }
+    .loading-dot:nth-child(4n + 1) {}
 
     .loading-dot:nth-child(4n + 2) {
-        animation-delay: .3s;
+        animation-delay: 0.3s;
     }
 
     .loading-dot:nth-child(4n + 3) {
-        animation-delay: .6s;
+        animation-delay: 0.6s;
     }
 }
-
 @keyframes loading {
     0% {
         opacity: 1;
     }
+
     50% {
-        opacity: .2;
+        opacity: 0.2;
     }
+
     100% {
         opacity: 1;
     }

@@ -50,6 +50,8 @@ class CareerPortalModalController {
 
     closeModal(applyForm) {
         this.SharedData.modalState = 'closed';
+        let mainSection = this.$window.document.getElementById('main-section');
+        mainSection.style.overflow = 'auto';
         this.showForm = true;
         this.hasAttemptedLIApply = false;
 

@@ -65,6 +65,8 @@ class JobDetailController {
 
     applyModal() {
         this.SharedData.modalState = 'open';
+        let mainSection = this.$window.document.getElementById('main-section');
+        mainSection.style.overflow = 'hidden';
     }
 
     loadRelatedJobs() {
