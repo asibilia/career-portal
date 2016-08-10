@@ -36,9 +36,8 @@ section.portal {
             }
 
             > section.fade {
-                height: calc(100% - #{$header-height});
+                height: 100%;
                 overflow: auto;
-                padding-bottom: 200px;
             }
         }
     }

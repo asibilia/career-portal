@@ -1,5 +1,5 @@
 section.job-list {
-    padding: 1.5em;
+    padding: 1.5em 1.5em 6.5em;
 
     > h4 {
         color: darken($sidebar-color, 15%);
@@ -13,6 +13,8 @@ section.job-list {
         margin: 0;
         font-size: 1.2em;
         cursor: pointer;
+        color: $primary;
+        font-weight: bold;
     }
     // Parent selector
     .list-view & {
@@ -163,6 +165,47 @@ section.job-list {
                     }
                 }
             }
+        }
+    }
+}
+
+.main-footer {
+    width: 100%;
+    padding: 3%;
+    background: lighten($sidebar-color, 50%);
+    padding-bottom: 160px;
+    position: relative;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin-right: 50px;
+
+        li {
+            line-height: 2.3em;
+        }
+    }
+
+    .link-row {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .bottom-row {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        bottom: 80px;
+        left: 0;
+        right: 0;
+        background: lighten($sidebar-color, 40%);
+        padding: 20px;
+
+        a {
+            margin-right: 10px;
         }
     }
 }

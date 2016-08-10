@@ -126,7 +126,7 @@
 
                             > input {
                                 flex: 1;
-                                color: lighten($dark-bg, 30%);
+                                color: darken($dark-bg, 75%);
 
                                 &.ng-invalid {
                                     &.ng-valid-required {
