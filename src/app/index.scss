@@ -100,7 +100,7 @@ a {
     > .card-date {
         font-size: 0.8em;
         font-weight: 500;
-        color: lighten($sidebar-color, 50%);
+        color: lighten($sidebar-color, 20%);
     }
 
     > .card-title-category {
@@ -135,7 +135,7 @@ a {
      > .card-location,
      > .card-type,
     > .card-separator {
-        color: lighten($sidebar-color, 40%);
+        color: lighten($sidebar-color, 10%);
         font-weight: 500;
         font-size: 1.1em;
     }
