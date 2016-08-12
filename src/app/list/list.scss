@@ -211,6 +211,10 @@ section.job-list {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+        @include desktop() {
+            flex-wrap: nowrap;
+        }
+        flex-wrap: wrap;
 
         h3 {
             text-transform: uppercase;

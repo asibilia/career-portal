@@ -44,8 +44,24 @@
             align-items: center;
             justify-content: flex-end;
 
+            & > span {
+                display: none;
+                @include desktop() {
+                    display: inline-block;
+                }
+                @include large-desktop() {
+                    display: inline-block;
+                }
+            }
+
             .nav-link-list {
-                display: flex;
+                display: none;
+                @include desktop() {
+                    display: flex;
+                }
+                @include large-desktop() {
+                    display: flex;
+                }
                 align-items: center;
                 line-height: 3.5;
 
