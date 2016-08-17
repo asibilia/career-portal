@@ -75,8 +75,8 @@ section.job-list {
                         }
                     }
 
-                     > .card-location,
-                    > .card-type {
+                     > .card-type,
+                    > .card-location {
                         flex: 1;
                         text-align: center;
                     }
@@ -227,7 +227,7 @@ section.job-list {
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        bottom: 80px;
+        bottom: 0;
         left: 0;
         right: 0;
         background: darken(#333E48, 10%);
