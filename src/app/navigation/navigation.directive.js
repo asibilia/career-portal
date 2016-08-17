@@ -1,11 +1,27 @@
 class BullhornHeaderController {
-    constructor($location, $window, $scope) {
+    constructor($location, $window, $scope, $stateParams, $rootScope) {
         'ngInject';
 
         this.$window = $window;
         this.$location = $location;
+        $scope.headerIsHidden = !!$stateParams.id;
+
+        setTimeout(() => {
+            $scope.headerIsHidden = !!$stateParams.id;
+            $scope.stopScroll = true;
+        }, 200);
+
         $scope.txtOpacity = 1;
         this.scroll($scope);
+
+        $rootScope.$on('$stateChangeStart', (e, t, toParams) => {
+            $scope.headerIsHidden = !!toParams.id;
+            if ($scope.headerIsHidden) {
+                this.$window.document.getElementById('job-list').scrollTop = 0;
+                this.$window.document.body.scrollTop = 0;
+            }
+            $scope.stopScroll = true;
+        });
     }
 
     scroll(scope) {
@@ -17,12 +33,14 @@ class BullhornHeaderController {
             scope.txtOpacity = 1 - this.$window.scrollY.map(0, 210, 0, 1);
             let headerHeight = this.$window.document.getElementById('header-text').offsetHeight;
 
-            if (this.$window.scrollY > headerHeight) {
-                scope.collapse = true;
-                this.$window.document.body.scrollTop = headerHeight + 1;
+            if (scope.headerIsHidden) {
+                scope.stopScroll = false;
+            } else if (this.$window.scrollY > headerHeight) {
+                scope.stopScroll = false;
             } else {
-                scope.collapse = false;
-                // console.log(this.$window.scrollY);
+                scope.stopScroll = true;
+                this.$window.document.getElementById('job-list').scrollTop = 0;
+                this.$window.document.getElementById('filter-list').scrollTop = 0;
             }
             scope.$apply();
         });

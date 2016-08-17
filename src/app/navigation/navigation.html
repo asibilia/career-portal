@@ -1,4 +1,4 @@
-<div class="bh-header-nav" ng-class="{collapse:!collapse}">
+<div class="bh-header-nav" ng-class="{collapse:stopScroll}">
     <nav ng-class="{collapse:collapse}">
         <img src="assets/images/logo.svg" alt="Bullhorn Logo" />
 
@@ -28,7 +28,7 @@
                             <a href="http://www.bullhorn.com/enterprise">Enterprise</a>
                             <a href="http://www.bullhorn.com/marketplace">Marketplace</a>
                             <a href="http://www.bullhorn.com/services">Services</a>
-                            <img src="../assets/images/nav_list_bull.png" alt="" />
+                            <!-- <img src="../assets/images/nav_list_bull.png" alt="" /> -->
                         </div>
                     </div>
                 </div>
@@ -39,8 +39,7 @@
             <span>(888) 465 - 4838</span>
         </div>
     </nav>
-
-    <div id="header-text" class="header-text" style="opacity: {{txtOpacity}};">
+    <div data-ng-hide="headerIsHidden" id="header-text" class="header-text" style="opacity: {{txtOpacity}};">
         <h1>Run With The Bulls</h1>
         <h4> Check out our open positions and find your dream job today.</h4>
     </div>
