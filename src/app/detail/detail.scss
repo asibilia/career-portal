@@ -4,6 +4,7 @@ section.job-detail {
         padding: 1.5em;
         display: flex;
         flex-direction: row;
+        justify-content: center;
     }
 
     > div.description {
@@ -219,9 +220,9 @@ section.job-detail {
             }
         }
 
-         > .card-separator,
+         > .card-location,
          > .card-type,
-        > .card-location {
+        > .card-separator {
             color: $sidebar-color;
             font-weight: 500;
             font-size: 1.1em;
